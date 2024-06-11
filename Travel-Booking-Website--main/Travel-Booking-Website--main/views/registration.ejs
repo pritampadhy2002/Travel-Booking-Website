@@ -1,0 +1,50 @@
+<%- include("partials/header") %>
+
+<div class="heading" style="background:url(images/header-bg-3.png) no-repeat">
+    <h1>Registration</h1>
+ </div>
+ 
+ <!-- Login section starts  -->
+ 
+ <section class="booking">
+ 
+    <h1 class="heading-title">Registration Details</h1>
+
+ 
+    <% if (typeof errorMessage !== 'undefined') { %>
+      <div id="alert-message" class="custom-alert">
+          <p><%= errorMessage %></p>
+      </div>
+      <script>
+          // JavaScript to display the alert message
+          setTimeout(function () {
+              var alertMessage = document.getElementById('alert-message');
+              alertMessage.style.display = 'none';
+          }, 5000); // Hide the alert message after 5 seconds
+      </script>
+  <% } %>
+ 
+    <form action="/register" method="POST" class="book-form">
+ 
+       <div class="flex">
+          <div class="inputBox">
+             <span>username :</span>
+             <input type="text" placeholder="enter your username" name="username">
+          </div>
+          <div class="inputBox">
+             <span>Password:</span>
+             <input type="password" placeholder="enter your password" name="password">
+          </div>
+          <div class="inputBox">
+             <span>Confirm Password:</span>
+             <input type="password" placeholder="enter confirm password" name="cPassword">
+          </div>
+       <input type="submit" value="submit" class="btn" name="send">
+ 
+    </form>
+ 
+ </section>
+ 
+ <!-- Login section ends -->
+
+<%- include("partials/footer"); %>
